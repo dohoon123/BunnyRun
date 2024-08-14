@@ -5,7 +5,8 @@ using UnityEngine;
 public class JumpComponent : MonoBehaviour
 {
     Rigidbody2D myRigidbody;
-    float jumpCount = 2;
+    float curJumpCount = 2;
+    const int maxJumpCount = 2;
     [SerializeField] float jumpForce = 1.0f;
 
     void Awake() {
@@ -13,9 +14,20 @@ public class JumpComponent : MonoBehaviour
     }
 
     public void Jump() {
-        if (jumpCount <= 0) { return; }
+        if (curJumpCount <= 0) { return; }
 
         myRigidbody.velocity = Vector2.up * jumpForce;
-        //jumpCount--;
+        curJumpCount--;
+
+        Debug.Log(curJumpCount);
+    }
+
+    public void ResetJump() {
+        curJumpCount = maxJumpCount;
+    }
+
+    public void DisableRigidbody() {
+        myRigidbody.isKinematic = false;
+        myRigidbody.gravityScale = 0;
     }
 }

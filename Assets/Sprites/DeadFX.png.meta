@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4fd3114d567e5a4f9c601e1ea925f03
+guid: b5dfa80128a010948a41ecc59c11a0f0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bunny_Run_0
+      name: DeadFX_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,20 +144,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2999cb87869093448ae1180d0948b06
-      internalID: -1814941753
+      spriteID: d87629d6aeda9ad4494e9423b8d48f22
+      internalID: 1657216220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Run_1
+      name: DeadFX_1
       rect:
         serializedVersion: 2
         x: 65
@@ -165,20 +165,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8702f70ad168d6438e0a6c42dbbe9ac
-      internalID: 600407585
+      spriteID: e82f796e54423be42829c4536635434d
+      internalID: -518896841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Run_2
+      name: DeadFX_2
       rect:
         serializedVersion: 2
         x: 130
@@ -186,20 +186,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3417a0864e443284cb22700bd310c045
-      internalID: -875907358
+      spriteID: 693cc35c0c41c0e478183fa09aa5df63
+      internalID: 738605924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Run_3
+      name: DeadFX_3
       rect:
         serializedVersion: 2
         x: 195
@@ -207,20 +207,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c31b30614fcebe4a8a4fe9537d3f787
-      internalID: 1861190253
+      spriteID: 55ab43e541f38ac4b935a40b87e63b01
+      internalID: 21931562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Run_4
+      name: DeadFX_4
       rect:
         serializedVersion: 2
         x: 260
@@ -228,20 +228,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8058109464af09b468de64fed7cf85cf
-      internalID: -1450358291
+      spriteID: 98a063caa0a8ef34498940f64a0657a7
+      internalID: -1449425121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Run_5
+      name: DeadFX_5
       rect:
         serializedVersion: 2
         x: 325
@@ -249,20 +249,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac34683544832114cbbfc6c2a0465e4e
-      internalID: -1075409600
+      spriteID: 2f5801b7c54f6644f97fc3b027803073
+      internalID: -1786792577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bunny_Run_6
+      name: DeadFX_6
       rect:
         serializedVersion: 2
         x: 390
@@ -270,14 +270,77 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baf2cbabcf05b8042a5b36dc53cdf1f8
-      internalID: -1542731484
+      spriteID: 73277e04b839b9f4497388dd58826514
+      internalID: -429103935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadFX_7
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89871a64454233c41b316cc764523542
+      internalID: 1829016367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadFX_8
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1833bd18cc36a1f47bc26ad9d5313a4b
+      internalID: 467988975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadFX_9
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122584f9b2e8bcc4f869b3bed9015d49
+      internalID: 347085264
       vertices: []
       indices: 
       edges: []
@@ -293,13 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bunny_Run_0: -1814941753
-      Bunny_Run_1: 600407585
-      Bunny_Run_2: -875907358
-      Bunny_Run_3: 1861190253
-      Bunny_Run_4: -1450358291
-      Bunny_Run_5: -1075409600
-      Bunny_Run_6: -1542731484
+      DeadFX_0: 1657216220
+      DeadFX_1: -518896841
+      DeadFX_2: 738605924
+      DeadFX_3: 21931562
+      DeadFX_4: -1449425121
+      DeadFX_5: -1786792577
+      DeadFX_6: -429103935
+      DeadFX_7: 1829016367
+      DeadFX_8: 467988975
+      DeadFX_9: 347085264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

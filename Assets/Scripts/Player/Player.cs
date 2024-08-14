@@ -14,10 +14,8 @@ public class Player : MonoBehaviour
 
     SpriteRenderer mySpriterRenderer;
     BoxCollider2D myCollider;
-    Animator myAnimator;
 
-    const float collideTimeOffset = 0.2f;
-    float currentCollideTimeLeft = 0.0f;
+    Animator myAnimator;
 
     private void Awake() {
         playerState = PlayerState.E_Idle;
@@ -30,20 +28,16 @@ public class Player : MonoBehaviour
     }
 
     private void Update() {
-        currentCollideTimeLeft -= Time.deltaTime;
 
         if(Input.touchCount <= 0) { return; }
+        Touch touch = Input.GetTouch(0);
 
         switch (playerState) {
-            case PlayerState.E_Idle:
-                break;
             case PlayerState.E_Land:
-                
-                Touch touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began) { SetJump(); }
                 break;
             case PlayerState.E_Jump:
-                jumpComponent.Jump();
+                if (touch.phase == TouchPhase.Began) { jumpComponent.Jump(); }
                 break;
             case PlayerState.E_Stop:
                 break;
@@ -58,19 +52,25 @@ public class Player : MonoBehaviour
     private void SetJump() {
         jumpComponent.Jump();
         playerState = PlayerState.E_Jump;
-        currentCollideTimeLeft = collideTimeOffset;
         myAnimator.SetTrigger("Jump");
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (currentCollideTimeLeft > 0) { return; }
 
         if (playerState == PlayerState.E_Jump) {
             if (other.gameObject.CompareTag("Land")) {
                 myAnimator.SetTrigger("Land");
                 playerState = PlayerState.E_Land;
-                Debug.Log("i'm landing");
+                jumpComponent.ResetJump();
             }
         }
+    }
+
+    public void CollideWithObstacle() {
+        playerState = PlayerState.E_Stop;
+
+        myCollider.enabled = false;
+        jumpComponent.DisableRigidbody();
+        myAnimator.SetTrigger("Dead");
     }
 }

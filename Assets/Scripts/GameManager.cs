@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent OnGameStart;
 
+    public float gameSpeed = 1.0f; 
+
     bool isStart = false;
 
     void Awake() {
