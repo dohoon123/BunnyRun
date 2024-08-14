@@ -18,15 +18,14 @@ public class JumpComponent : MonoBehaviour
 
         myRigidbody.velocity = Vector2.up * jumpForce;
         curJumpCount--;
-
-        Debug.Log(curJumpCount);
     }
 
     public void ResetJump() {
         curJumpCount = maxJumpCount;
     }
 
-    public void DisableRigidbody() {
+    public void SetDead() {
+        myRigidbody.velocity = Vector2.zero;
         myRigidbody.isKinematic = false;
         myRigidbody.gravityScale = 0;
     }

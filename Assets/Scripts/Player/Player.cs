@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 
 public class Player : MonoBehaviour
 {
-    public enum PlayerState { E_Idle, E_Land, E_Jump, E_Stop }
+    public enum PlayerState { E_Idle, E_Land, E_Jump, E_Dead }
 
     PlayerState playerState;
 
@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     BoxCollider2D myCollider;
 
     Animator myAnimator;
+    float deadDuration;
 
     private void Awake() {
         playerState = PlayerState.E_Idle;
@@ -25,6 +26,13 @@ public class Player : MonoBehaviour
         mySpriterRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
+
+        RuntimeAnimatorController ac = myAnimator.runtimeAnimatorController;
+        foreach (AnimationClip clip in ac.animationClips) {
+            if (clip.name == "Bunny_Dead") {
+                deadDuration = clip.length;
+            }
+        }
     }
 
     private void Update() {
@@ -39,7 +47,7 @@ public class Player : MonoBehaviour
             case PlayerState.E_Jump:
                 if (touch.phase == TouchPhase.Began) { jumpComponent.Jump(); }
                 break;
-            case PlayerState.E_Stop:
+            case PlayerState.E_Dead:
                 break;
         }
     }
@@ -50,8 +58,8 @@ public class Player : MonoBehaviour
     }
 
     private void SetJump() {
-        jumpComponent.Jump();
         playerState = PlayerState.E_Jump;
+        jumpComponent.Jump();
         myAnimator.SetTrigger("Jump");
     }
 
@@ -66,11 +74,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void CollideWithObstacle() {
-        playerState = PlayerState.E_Stop;
+    public void GameOver() {
+        playerState = PlayerState.E_Dead;
 
         myCollider.enabled = false;
-        jumpComponent.DisableRigidbody();
+        jumpComponent.SetDead();
         myAnimator.SetTrigger("Dead");
+
+        StartCoroutine(DestroySelf());
+    }
+
+    IEnumerator DestroySelf(){
+        yield return new WaitForSeconds(deadDuration);
+        Destroy(this.gameObject);
     }
 }

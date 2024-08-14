@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public UnityEvent OnGameStart;
+    public UnityEvent OnGameOver;
 
     public float gameSpeed = 1.0f; 
 
@@ -21,8 +22,12 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-    public void RunEvent() {
+    public void RunGameStartEvent() {
         OnGameStart?.Invoke();
+    }
+
+    public void RunGameOverEvent() {
+        OnGameOver?.Invoke();
     }
 
     void StartGame() {
@@ -31,7 +36,7 @@ public class GameManager : MonoBehaviour
                 Touch touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began) {
                     isStart = true;
-                    RunEvent();
+                    RunGameStartEvent();
                 }
             }
         }

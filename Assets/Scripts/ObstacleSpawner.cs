@@ -9,7 +9,6 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Start() {
         SetLocation();
-        StartSpawn();
     }
 
     private void SetLocation() {
@@ -17,7 +16,7 @@ public class ObstacleSpawner : MonoBehaviour
         transform.SetPositionAndRotation(loc, transform.rotation);
     }
 
-    private void StartSpawn() {
+    public void StartSpawn() {
         StartCoroutine(Spawn());
     }
 
@@ -30,7 +29,7 @@ public class ObstacleSpawner : MonoBehaviour
         while (true) {
             // do sth
             GameObject obstacle = Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
-            Destroy(obstacle, 10);
+            Destroy(obstacle, 20);
 
             yield return new WaitForSeconds(2);
         }

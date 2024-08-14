@@ -14,8 +14,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            Player p = other.gameObject.GetComponent<Player>();
-            p.CollideWithObstacle();
+            GameManager.instance.RunGameOverEvent();
         }
     }
 }
