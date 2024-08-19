@@ -7,7 +7,6 @@ using UnityEngine.Playables;
 public class Player : MonoBehaviour
 {
     public enum PlayerState { E_Idle, E_Land, E_Jump, E_Dead }
-
     PlayerState playerState;
 
     JumpComponent jumpComponent;

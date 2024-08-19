@@ -6,9 +6,15 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject obstaclePrefab;
+    List<GameObject> obstacles;
+
+    IEnumerator spawnCoroutine;
 
     private void Start() {
         SetLocation();
+
+        obstacles = new List<GameObject>();
+        spawnCoroutine = Spawn();
     }
 
     private void SetLocation() {
@@ -17,18 +23,26 @@ public class ObstacleSpawner : MonoBehaviour
     }
 
     public void StartSpawn() {
-        StartCoroutine(Spawn());
+        StartCoroutine(spawnCoroutine);
     }
 
     public void StopSpawn() {
-        StopCoroutine(Spawn());
+        if (spawnCoroutine != null) {
+            StopCoroutine(spawnCoroutine);
+        }
+
+        foreach (GameObject obstacle in obstacles) {
+            obstacle.GetComponent<Obstacle>().StopMove();
+        }
     }
 
     IEnumerator Spawn() {
 
         while (true) {
             // do sth
+            
             GameObject obstacle = Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
+            obstacles.Add(obstacle);
             Destroy(obstacle, 20);
 
             yield return new WaitForSeconds(2);
