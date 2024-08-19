@@ -12,16 +12,13 @@ public class GameManager : MonoBehaviour
 
     public float gameSpeed = 1.0f; 
 
-    bool isStart = false;
-
     void Awake() {
         instance = this;
     }
-
+/*
     void Update() {
-        StartGame();
     }
-
+*/
     public void RunGameStartEvent() {
         OnGameStart?.Invoke();
     }
@@ -30,15 +27,7 @@ public class GameManager : MonoBehaviour
         OnGameOver?.Invoke();
     }
 
-    void StartGame() {
-        if (!isStart) {
-            if (Input.touchCount > 0) {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began) {
-                    isStart = true;
-                    RunGameStartEvent();
-                }
-            }
-        }
+    public void StartGame() {
+        RunGameStartEvent();
     }
 }

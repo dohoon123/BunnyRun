@@ -7,7 +7,7 @@ public class JumpComponent : MonoBehaviour
     Rigidbody2D myRigidbody;
     float curJumpCount = 2;
     const int maxJumpCount = 2;
-    [SerializeField] float jumpForce = 1.0f;
+    [SerializeField] float jumpForce = 5.0f;
 
     void Awake() {
         myRigidbody = GetComponent<Rigidbody2D>();
