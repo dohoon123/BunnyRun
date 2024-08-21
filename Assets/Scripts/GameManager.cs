@@ -15,10 +15,6 @@ public class GameManager : MonoBehaviour
     void Awake() {
         instance = this;
     }
-/*
-    void Update() {
-    }
-*/
     public void RunGameStartEvent() {
         OnGameStart?.Invoke();
     }
