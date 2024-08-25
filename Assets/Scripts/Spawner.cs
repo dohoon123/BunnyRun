@@ -7,13 +7,13 @@ public class Spawner : MonoBehaviour
     IEnumerator spawnCoroutine;
     [SerializeField] float spawnDelayTime = 2.0f;
 
-    ObstacleSpawner[] obstacleSpawners;
+    ObjectSpawner[] objectSpawners;
 
     private void Start() {
         SetLocation();
 
         spawnCoroutine = Spawn();
-        obstacleSpawners = transform.GetComponentsInChildren<ObstacleSpawner>();
+        objectSpawners = transform.GetComponentsInChildren<ObjectSpawner>();
     }
 
     public void StartSpawn(){
@@ -27,23 +27,23 @@ public class Spawner : MonoBehaviour
             StopCoroutine(spawnCoroutine);
         }
 
-        foreach (ObstacleSpawner obSpawner in obstacleSpawners) {
-            obSpawner.StopSpawn();
+        foreach (ObjectSpawner ob in objectSpawners) {
+            ob.StopSpawn();
         }
     }
 
     IEnumerator Spawn(){
 
-        int spawnerCount = obstacleSpawners.Length;
+        int spawnerCount = objectSpawners.Length;
+
         while (true) {
             
             int selectNumber = UnityEngine.Random.Range(0, spawnerCount);
             
-            obstacleSpawners[selectNumber].Spawn();
+            objectSpawners[selectNumber].Spawn();
 
             yield return new WaitForSeconds(spawnDelayTime);
         }
-
     }
 
     private void SetLocation() {

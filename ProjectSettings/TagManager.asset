@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Land
   - Obstacle
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Background
-  - Obstacle
+  - InteractableObject
   - Land
   - 
   - 
