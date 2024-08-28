@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] AudioSource audioObject;
+    static AudioManager instance;
+
+    private void Awake() {
+        ManageSingleton();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void ManageSingleton() {
+        if (instance != null) {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }else {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    public void PlayClip(AudioClip audioClip, Vector3 position, float volume) {
+        if (audioClip != null && audioObject != null) {
+            AudioSource.PlayClipAtPoint(audioClip, position, volume);
+            
+            //spawn in gameObject
+            AudioSource audioSource = Instantiate(audioObject, position, Quaternion.identity);
+
+            //assign the audioClip
+            audioSource.clip = audioClip;
+            audioSource.volume = volume;
+
+            //play sound
+            audioSource.Play();
+
+            //get length of sound clip
+            float clipLength = audioSource.clip.length;
+
+            //Destroy Audio after it's done playing
+            Destroy(audioSource.gameObject, clipLength);
+        }
     }
 }

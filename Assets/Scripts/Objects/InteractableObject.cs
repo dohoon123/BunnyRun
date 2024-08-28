@@ -5,20 +5,25 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     [SerializeField] Vector3 direction;
-    [SerializeField] float speed;
-    
+
+    private float moveSpeed;
     private bool isMove = true;
 
     void Update() {
+        SetMoveSpeed();
         Move();
     }
 
     void Move() {
         if (isMove) {
-            transform.Translate(direction.normalized * speed * Time.deltaTime);
+            transform.Translate(direction.normalized * moveSpeed * 2.0f * Time.deltaTime);
         }
     }
 
     public void StartMove() { isMove = true; }
     public void StopMove()  { isMove = false; }
+
+    void SetMoveSpeed() {
+        moveSpeed = GameManager.instance.gameSpeed;
+    }
 }
