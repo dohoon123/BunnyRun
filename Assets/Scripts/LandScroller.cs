@@ -21,7 +21,7 @@ public class LandScroller : MonoBehaviour
     }
 
     void SetMoveSpeed() {
-        moveSpeed.x = GameManager.instance.gameSpeed * 1.5f;
+        moveSpeed.x = GameManager.instance.gameSpeed;
     }
 
     void Slide(){
