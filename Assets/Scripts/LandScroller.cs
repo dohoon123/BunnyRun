@@ -9,19 +9,27 @@ public class LandScroller : MonoBehaviour
     Vector2 offset;
     Material material;
 
+    bool isSlide = false;
+
     void Start() {
         material = GetComponent<SpriteRenderer>().material;
     }
 
     void Update() {
         SetMoveSpeed();
-        //since the land shape is rectangler which ratio is width : 2 and height : 1
-        offset = moveSpeed * Time.deltaTime;
-
-        material.mainTextureOffset += offset;
+        Slide();
     }
 
     void SetMoveSpeed() {
-        moveSpeed.x = GameManager.instance.gameSpeed;
+        moveSpeed.x = GameManager.instance.gameSpeed * 1.5f;
     }
+
+    void Slide(){
+        if(!isSlide) { return; }
+        offset = moveSpeed * Time.deltaTime;
+        material.mainTextureOffset += offset;
+    }
+
+    public void StartSlide() { isSlide = true; }
+    public void StopSlide()  { isSlide = false; }
 }

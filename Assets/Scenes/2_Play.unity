@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 299648475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.15, z: 0}
+  m_LocalPosition: {x: 0, y: -1.2, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8016a11dbf9206e47b78a454bfea9df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 8
+  jumpForce: 5
 --- !u!95 &299648483
 Animator:
   serializedVersion: 5
@@ -429,6 +429,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1268721818}
+        m_TargetAssemblyTypeName: LandScroller, Assembly-CSharp
+        m_MethodName: StartSlide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnGameOver:
     m_PersistentCalls:
       m_Calls:
@@ -447,6 +459,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1214257450}
         m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
         m_MethodName: StopSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1268721818}
+        m_TargetAssemblyTypeName: LandScroller, Assembly-CSharp
+        m_MethodName: StopSlide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1168,7 +1192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8670ceb08b0d8a4cb7351b3bd67a5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: {x: 1, y: 0}
 --- !u!61 &1268721819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1275,7 +1298,7 @@ Transform:
   m_GameObject: {fileID: 1268721817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.81, y: -2.0015, z: 0}
+  m_LocalPosition: {x: 0.81, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1871,7 +1894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3868714954990081883, guid: e9567b1326adb1942801fa372fbad24e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5177081115473760021, guid: e9567b1326adb1942801fa372fbad24e, type: 3}
       propertyPath: m_LocalPosition.x

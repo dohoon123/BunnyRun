@@ -15,6 +15,7 @@ public class InteractableObject : MonoBehaviour
     }
 
     void Move() {
+        //since the land shape is rectangler which ratio is width : 2 and height : 1
         if (isMove) {
             transform.Translate(direction.normalized * moveSpeed * 2.0f * Time.deltaTime);
         }
