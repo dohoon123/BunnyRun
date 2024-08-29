@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93be36d90cce024aaf50494a1e0b581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelayTime: 1
+  spawnDelayTime: 2
 --- !u!1 &1268721817
 GameObject:
   m_ObjectHideFlags: 0

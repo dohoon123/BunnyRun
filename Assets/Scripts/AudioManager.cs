@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioObject;
-    static AudioManager instance;
+    public static AudioManager instance;
 
     private void Awake() {
         ManageSingleton();
@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayClip(AudioClip audioClip, Vector3 position, float volume) {
+    public void PlayClipAtPosition(AudioClip audioClip, Vector3 position, float volume) {
         if (audioClip != null && audioObject != null) {
             AudioSource.PlayClipAtPoint(audioClip, position, volume);
             
@@ -41,5 +41,9 @@ public class AudioManager : MonoBehaviour
             //Destroy Audio after it's done playing
             Destroy(audioSource.gameObject, clipLength);
         }
+    }
+
+    public void PlayClip(AudioClip audioClip) {
+        PlayClipAtPosition(audioClip, transform.position, 1.0f);
     }
 }

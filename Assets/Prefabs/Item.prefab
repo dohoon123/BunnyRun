@@ -172,4 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0, z: 0}
-  speed: 2
+  myScore: 1
+  itemGetSound: {fileID: 8300000, guid: a317db9e95d3ed4459362f161dffa53c, type: 3}
