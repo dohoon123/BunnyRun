@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0, z: 0}
   myScore: 1
-  itemGetSound: {fileID: 8300000, guid: a317db9e95d3ed4459362f161dffa53c, type: 3}
+  itemGetSound: {fileID: 8300000, guid: de37455ea31f6ff4897494e601280330, type: 3}
