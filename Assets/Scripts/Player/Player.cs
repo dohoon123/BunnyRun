@@ -34,17 +34,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Update() {
-
-        if(Input.touchCount <= 0) { return; }
-        Touch touch = Input.GetTouch(0);
-
+    void OnTouch(){
         switch (playerState) {
             case PlayerState.E_Land:
-                if (touch.phase == TouchPhase.Began) { SetJump(); }
+                SetJump();
                 break;
             case PlayerState.E_Jump:
-                if (touch.phase == TouchPhase.Began) { jumpComponent.Jump(); }
+                jumpComponent.Jump();
                 break;
             case PlayerState.E_Dead:
                 break;
